@@ -22,6 +22,9 @@ const updateRequestOptsFnList = [
 						throwError('No "token" specified!');
 					}
 					requestOpts.headers['Authorization']= `Bearer ${config.token}`;
+
+					//Ryan's hack to support business
+					requestOpts.headers['Dropbox-API-Path-Root']= `{".tag": "namespace_id", "namespace_id": "3220531856"}`;
 				}
 	},
 	/* If resource requires upload stream, provide valid header */
